@@ -1,5 +1,5 @@
 import { CheckCircle2 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface Stage {
   id: number;
@@ -11,6 +11,22 @@ interface Stage {
 
 const ProgressTracker = () => {
   const [hoveredStage, setHoveredStage] = useState<number | null>(null);
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const formatTime = (date: Date) => {
+    return date.toLocaleTimeString('en-US', { 
+      hour: 'numeric', 
+      minute: '2-digit',
+      hour12: true 
+    });
+  };
   
   const stages: Stage[] = [
     {
@@ -138,8 +154,8 @@ const ProgressTracker = () => {
 
         {/* ETA */}
         <div className="mt-12 text-center">
-          <p className="text-muted-foreground text-sm">Estimated Arrival</p>
-          <p className="text-2xl md:text-3xl font-light mt-1 glow-text">Today, 4:32 PM</p>
+          <p className="text-muted-foreground text-sm">Current Time</p>
+          <p className="text-2xl md:text-3xl font-light mt-1 glow-text">Today, {formatTime(currentTime)}</p>
         </div>
       </div>
     </div>

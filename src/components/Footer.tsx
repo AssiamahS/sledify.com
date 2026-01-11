@@ -28,7 +28,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <p className="text-sm text-muted-foreground">
-            © 2024 Sledify. All rights reserved.
+            © {new Date().getFullYear()} Sledify. All rights reserved.
           </p>
         </div>
       </div>
