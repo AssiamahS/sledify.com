@@ -1,5 +1,5 @@
-import { Package, Truck, CheckCircle2 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { CheckCircle2 } from "lucide-react";
+import { useState } from "react";
 
 interface Stage {
   id: number;
@@ -17,14 +17,14 @@ const ProgressTracker = () => {
       id: 1,
       label: "Order Confirmed",
       sublabel: "PROCESSING COMPLETE",
-      icon: <Package className="w-6 h-6" />,
+      icon: <img src="/OIG9.jpeg" alt="Order Confirmed" className="w-10 h-10 rounded-lg object-cover" />,
       status: "completed",
     },
     {
       id: 2,
       label: "In Motion",
       sublabel: "SLED EN ROUTE",
-      icon: <Truck className="w-6 h-6" />,
+      icon: <img src="/OIG2.jpeg" alt="In Motion" className="w-10 h-10 rounded-lg object-cover" />,
       status: "active",
     },
     {
