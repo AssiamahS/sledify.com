@@ -1,76 +1,76 @@
 import { useState, useEffect } from "react";
-import { Battery, Gauge, Mountain, Thermometer } from "lucide-react";
+import { Volume2, Music, Zap, Disc } from "lucide-react";
 
-interface TelemetryData {
-  battery: number;
-  velocity: number;
-  altitude: number;
-  temp: number;
+interface MixerData {
+  masterVolume: number;
+  bpm: number;
+  crossfader: number;
+  effects: number;
 }
 
-const TelemetryPanel = () => {
-  const [data, setData] = useState<TelemetryData>({
-    battery: 87,
-    velocity: 42,
-    altitude: 156,
-    temp: 22,
+const MixerPanel = () => {
+  const [data, setData] = useState<MixerData>({
+    masterVolume: 85,
+    bpm: 128,
+    crossfader: 50,
+    effects: 42,
   });
 
-  // Simulate live data updates
+  // Simulate live mixing updates
   useEffect(() => {
     const interval = setInterval(() => {
       setData(prev => ({
-        battery: Math.max(0, Math.min(100, prev.battery + (Math.random() - 0.5) * 2)),
-        velocity: Math.max(0, Math.min(80, prev.velocity + (Math.random() - 0.5) * 8)),
-        altitude: Math.max(0, Math.min(500, prev.altitude + (Math.random() - 0.5) * 10)),
-        temp: Math.max(15, Math.min(35, prev.temp + (Math.random() - 0.5) * 2)),
+        masterVolume: Math.max(0, Math.min(100, prev.masterVolume + (Math.random() - 0.5) * 5)),
+        bpm: Math.max(80, Math.min(180, prev.bpm + (Math.random() - 0.5) * 2)),
+        crossfader: Math.max(0, Math.min(100, prev.crossfader + (Math.random() - 0.5) * 10)),
+        effects: Math.max(0, Math.min(100, prev.effects + (Math.random() - 0.5) * 8)),
       }));
     }, 1500);
 
     return () => clearInterval(interval);
   }, []);
 
-  const telemetryItems = [
+  const mixerItems = [
     {
-      label: "BATTERY",
-      value: `${Math.round(data.battery)}%`,
-      icon: <Battery className="w-5 h-5" />,
-      color: data.battery > 50 ? "text-accent" : data.battery > 20 ? "text-primary" : "text-destructive",
+      label: "MASTER VOL",
+      value: `${Math.round(data.masterVolume)}%`,
+      icon: <Volume2 className="w-5 h-5" />,
+      color: data.masterVolume > 90 ? "text-destructive" : "text-accent",
     },
     {
-      label: "VELOCITY",
-      value: `${Math.round(data.velocity)} km/h`,
-      icon: <Gauge className="w-5 h-5" />,
+      label: "BPM",
+      value: `${Math.round(data.bpm)}`,
+      icon: <Music className="w-5 h-5" />,
       color: "text-primary",
     },
     {
-      label: "ALTITUDE",
-      value: `${Math.round(data.altitude)} m`,
-      icon: <Mountain className="w-5 h-5" />,
+      label: "CROSSFADE",
+      value: `${Math.round(data.crossfader)}%`,
+      icon: <Disc className="w-5 h-5" />,
       color: "text-primary",
     },
     {
-      label: "TEMP",
-      value: `${Math.round(data.temp)}°C`,
-      icon: <Thermometer className="w-5 h-5" />,
-      color: data.temp < 25 ? "text-primary" : "text-destructive",
+      label: "FX WET",
+      value: `${Math.round(data.effects)}%`,
+      icon: <Zap className="w-5 h-5" />,
+      color: data.effects > 70 ? "text-accent" : "text-primary",
     },
   ];
 
   return (
-    <section className="py-20 md:py-32" id="technology">
+    <section className="py-20 md:py-32" id="effects">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16 fade-in-up">
-          <p className="hero-subheading mb-4">REAL-TIME TELEMETRY</p>
+          <p className="hero-subheading mb-4">REAL-TIME MIXING</p>
           <h2 className="text-3xl md:text-5xl font-extralight">
-            Live Sled Data
+            Live Mixer Controls
           </h2>
         </div>
 
-        {/* Telemetry Grid */}
+        {/* Mixer Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto">
-          {telemetryItems.map((item, index) => (
+          {mixerItems.map((item, index) => (
             <div
               key={item.label}
               className={`glass rounded-2xl p-6 text-center transition-all duration-500 hover:scale-105 fade-in-up`}
@@ -100,12 +100,12 @@ const TelemetryPanel = () => {
           ))}
         </div>
 
-        {/* Coordinates Display */}
+        {/* Now Playing Display */}
         <div className="mt-12 text-center">
           <div className="glass inline-block rounded-xl px-8 py-4">
-            <p className="tech-text text-muted-foreground mb-1">CURRENT COORDINATES</p>
+            <p className="tech-text text-muted-foreground mb-1">NOW PLAYING</p>
             <p className="font-mono text-lg md:text-xl text-primary">
-              37.7749° N, 122.4194° W
+              Track A → Track B | Sync Lock: ON
             </p>
           </div>
         </div>
@@ -114,4 +114,4 @@ const TelemetryPanel = () => {
   );
 };
 
-export default TelemetryPanel;
+export default MixerPanel;

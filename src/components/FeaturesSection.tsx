@@ -1,40 +1,40 @@
-import { Shield, Zap, Globe, Clock } from "lucide-react";
+import { Music, Sliders, Waves, Headphones } from "lucide-react";
 
 const FeaturesSection = () => {
   const features = [
     {
-      icon: <Zap className="w-8 h-8" />,
-      title: "Lightning Fast",
-      description: "Same-day delivery powered by autonomous sleds reaching speeds of 80 km/h.",
+      icon: <Music className="w-8 h-8" />,
+      title: "Dual Decks",
+      description: "Load and control two tracks simultaneously with independent pitch and tempo controls.",
     },
     {
-      icon: <Shield className="w-8 h-8" />,
-      title: "Secure Transit",
-      description: "Military-grade encryption and biometric locks protect every package.",
+      icon: <Sliders className="w-8 h-8" />,
+      title: "Crossfader",
+      description: "Smooth transitions between tracks with a professional-grade crossfader and EQ controls.",
     },
     {
-      icon: <Globe className="w-8 h-8" />,
-      title: "Global Network",
-      description: "Operating across 50+ cities with real-time cross-continental routing.",
+      icon: <Waves className="w-8 h-8" />,
+      title: "Effects Library",
+      description: "Apply reverb, delay, flanger, and more effects to create unique sounds.",
     },
     {
-      icon: <Clock className="w-8 h-8" />,
-      title: "24/7 Operations",
-      description: "Autonomous fleet operates around the clock, rain or shine.",
+      icon: <Headphones className="w-8 h-8" />,
+      title: "Cue System",
+      description: "Preview tracks in your headphones before mixing them into the live output.",
     },
   ];
 
   return (
-    <section className="py-20 md:py-32 relative" id="fleet">
+    <section className="py-20 md:py-32 relative" id="features">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/20 to-background" />
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <p className="hero-subheading mb-4">CAPABILITIES</p>
+          <p className="hero-subheading mb-4">MIXING FEATURES</p>
           <h2 className="text-3xl md:text-5xl font-extralight">
-            Engineered for Excellence
+            Professional DJ Tools
           </h2>
         </div>
 

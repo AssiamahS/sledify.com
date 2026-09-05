@@ -1,4 +1,4 @@
-import { Zap } from "lucide-react";
+import { Music } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -8,9 +8,9 @@ const Footer = () => {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <div className="w-6 h-6 rounded-lg bg-primary flex items-center justify-center">
-              <Zap className="w-4 h-4 text-primary-foreground" />
+              <Music className="w-4 h-4 text-primary-foreground" />
             </div>
-            <span className="text-lg font-semibold tracking-tight">Sledify</span>
+            <span className="text-lg font-semibold tracking-tight">DJ Mix</span>
           </div>
 
           {/* Links */}
@@ -28,7 +28,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <p className="text-sm text-muted-foreground">
-            © 2024 Sledify. All rights reserved.
+            © {new Date().getFullYear()} DJ Mix. All rights reserved.
           </p>
         </div>
       </div>

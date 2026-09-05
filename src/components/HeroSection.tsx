@@ -1,9 +1,11 @@
-import ProgressTracker from "./ProgressTracker";
-import { ArrowDown } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import DeckControls from "./DeckControls";
+import { ArrowDown, Play } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen relative flex flex-col justify-center pt-20" id="tracking">
+    <section className="min-h-screen relative flex flex-col justify-center pt-20" id="mixer">
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Gradient Orbs */}
@@ -25,19 +27,29 @@ const HeroSection = () => {
         {/* Hero Text */}
         <div className="text-center mb-16 md:mb-24">
           <p className="hero-subheading mb-4 fade-in-up opacity-0" style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}>
-            THE FUTURE OF LOGISTICS
+            PROFESSIONAL MUSIC MIXING
           </p>
           <h1 className="hero-heading mb-6 fade-in-up opacity-0" style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}>
-            <span className="text-foreground">Sledify</span>
+            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">SlyDecks</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto fade-in-up opacity-0" style={{ animationDelay: '300ms', animationFillMode: 'forwards' }}>
-            Autonomous delivery. Zero emissions. Unmatched precision.
+            Mix tracks. Add effects. Create seamless transitions.
           </p>
+          
+          {/* CTA Button */}
+          <div className="mt-8 fade-in-up opacity-0" style={{ animationDelay: '400ms', animationFillMode: 'forwards' }}>
+            <Link to="/studio">
+              <Button size="lg" className="gap-2 text-lg px-8 py-6 glow-primary">
+                <Play className="w-5 h-5" />
+                Start Mixing
+              </Button>
+            </Link>
+          </div>
         </div>
 
-        {/* Progress Tracker */}
+        {/* Deck Controls Preview */}
         <div className="fade-in-up opacity-0" style={{ animationDelay: '500ms', animationFillMode: 'forwards' }}>
-          <ProgressTracker />
+          <DeckControls />
         </div>
 
         {/* Scroll Indicator */}

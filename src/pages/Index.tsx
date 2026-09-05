@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import TelemetryPanel from "@/components/TelemetryPanel";
+import MixerPanel from "@/components/MixerPanel";
 import FeaturesSection from "@/components/FeaturesSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
   useEffect(() => {
     // Update page title and meta
-    document.title = "Sledify | The Future of Autonomous Delivery";
+    document.title = "SlyDecks | Pro DJ Mixer";
   }, []);
 
   return (
@@ -16,7 +16,7 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <TelemetryPanel />
+        <MixerPanel />
         <FeaturesSection />
       </main>
       <Footer />

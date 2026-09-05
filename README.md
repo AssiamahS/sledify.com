@@ -1,62 +1,38 @@
-# Sledify - Glow Tracker
+# DJ Mix - Professional Music Mixing Studio
 
-Track your skincare journey with Sledify.
+A web-based DJ mixing application with dual deck controls, crossfader, and real-time effects.
 
-**Live Site**: [sledify.com](https://sledify.com)
+## Features
+
+- **Dual Decks** - Control two tracks simultaneously with independent controls
+- **Crossfader** - Smooth transitions between tracks
+- **Effects Library** - Reverb, delay, flanger and more
+- **Cue System** - Preview tracks before mixing live
+- **Real-time BPM** - Sync tracks automatically
+- **Live Mixer Controls** - Master volume, crossfade, FX wet
 
 ## Tech Stack
 
-- **Framework**: React 18 with TypeScript
-- **Build Tool**: Vite
-- **Styling**: Tailwind CSS
-- **UI Components**: shadcn/ui + Radix UI
-- **Charts**: Recharts
-- **Routing**: React Router
+- React + TypeScript
+- Vite
+- Tailwind CSS
+- shadcn/ui components
+- Tone.js (audio)
+- WaveSurfer.js (waveforms)
 
 ## Getting Started
 
-### Prerequisites
-
-- Node.js 18+ 
-- npm or yarn
-
-### Installation
-
 ```bash
-# Clone the repository
-git clone https://github.com/AssiamahS/sledify.com.git
-cd sledify.com
-
-# Install dependencies
 npm install
-
-# Start development server
 npm run dev
 ```
 
-The app will be available at `http://localhost:8080`
+## Usage
 
-## Scripts
+1. Click on Deck A or Deck B to play/pause tracks
+2. Use the crossfader to blend between decks
+3. Adjust effects and volume in the mixer panel
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server |
-| `npm run build` | Build for production |
-| `npm run preview` | Preview production build |
-| `npm run lint` | Run ESLint |
+## Live Demo
 
-## Deployment
-
-This project is deployed on **Cloudflare Pages**. 
-
-Pushing to the `main` branch automatically triggers a deployment.
-
-### Build Settings for Cloudflare Pages
-
-- **Build command**: `npm run build`
-- **Build output directory**: `dist`
-- **Node.js version**: 18+
-
-## License
-
-MIT
+Visit the app at your local development server: `http://localhost:5173`

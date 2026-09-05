@@ -3,23 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Performance: DNS prefetch for any external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    
+    <!-- Performance: Preconnect to critical origins -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Performance: Preload critical assets -->
+    <link rel="modulepreload" href="/src/main.tsx" />
+    
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Sledify - Glow Tracker</title>
-    <meta name="description" content="Sledify Glow Tracker - Track your skincare journey" />
-    <meta name="author" content="Sledify" />
+    <title>SlyDecks - Pro DJ Mixer</title>
+    <meta name="description" content="SlyDecks - Professional browser-based DJ mixing studio. Mix tracks, add effects, and create seamless transitions." />
+    <meta name="author" content="SlyDecks" />
+    
+    <!-- Performance: Theme color for faster perceived load -->
+    <meta name="theme-color" content="#1a1a2e" />
+    
+    <!-- Performance: Prevent FOUC -->
+    <style>
+      html { background: #0a0a0f; }
+      #root { min-height: 100vh; }
+    </style>
 
-    <meta property="og:title" content="Sledify - Glow Tracker" />
-    <meta property="og:description" content="Track your skincare journey with Sledify" />
+    <meta property="og:title" content="SlyDecks - Pro DJ Mixer" />
+    <meta property="og:description" content="Professional browser-based DJ mixing studio. Mix tracks, add effects, and create seamless transitions." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://sledify.com" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Sledify - Glow Tracker" />
-    <meta name="twitter:description" content="Track your skincare journey with Sledify" />
+    <meta name="twitter:title" content="SlyDecks - Pro DJ Mixer" />
+    <meta name="twitter:description" content="Professional browser-based DJ mixing studio" />
   </head>
 
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Performance: Prefetch Studio page for faster navigation -->
+    <link rel="prefetch" href="/studio" as="document" />
   </body>
 </html>
