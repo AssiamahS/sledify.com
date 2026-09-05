@@ -1,4 +1,4 @@
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Package, Truck } from "lucide-react";
 import { useState, useEffect } from "react";
 
 interface Stage {
@@ -33,14 +33,14 @@ const ProgressTracker = () => {
       id: 1,
       label: "Order Confirmed",
       sublabel: "PROCESSING COMPLETE",
-      icon: <img src="/OIG9.jpeg" alt="Order Confirmed" className="w-10 h-10 rounded-lg object-cover" />,
+      icon: <Package className="w-6 h-6" />,
       status: "completed",
     },
     {
       id: 2,
       label: "In Motion",
       sublabel: "SLED EN ROUTE",
-      icon: <img src="/OIG2.jpeg" alt="In Motion" className="w-10 h-10 rounded-lg object-cover" />,
+      icon: <Truck className="w-6 h-6" />,
       status: "active",
     },
     {
@@ -105,7 +105,7 @@ const ProgressTracker = () => {
 
           {/* Stages */}
           <div className="relative flex justify-between items-start">
-            {stages.map((stage, index) => {
+            {stages.map((stage) => {
               const isHovered = hoveredStage === stage.id;
               
               return (

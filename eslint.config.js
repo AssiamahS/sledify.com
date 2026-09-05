@@ -5,7 +5,7 @@ import reactRefresh from "eslint-plugin-react-refresh";
 import tseslint from "typescript-eslint";
 
 export default tseslint.config(
-  { ignores: ["dist"] },
+  { ignores: ["dist", "pro3"] },
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ["**/*.{ts,tsx}"],
@@ -21,6 +21,17 @@ export default tseslint.config(
       ...reactHooks.configs.recommended.rules,
       "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
       "@typescript-eslint/no-unused-vars": "off",
+      // Allow empty interfaces (common in UI component libraries)
+      "@typescript-eslint/no-empty-object-type": "off",
+      // Allow require() in config files
+      "@typescript-eslint/no-require-imports": "off",
+    },
+  },
+  // Test files can have different rules
+  {
+    files: ["**/*.test.{ts,tsx}", "**/*.spec.{ts,tsx}", "**/test-utils.tsx"],
+    rules: {
+      "react-refresh/only-export-components": "off",
     },
   },
 );
